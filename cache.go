@@ -61,7 +61,7 @@ func (cache Cache) Put(key, value string) {
 
 func (cache Cache) Keys() []string {
 
-	output := make([]string, len(cache.data))
+	output := make([]string, 0)
 	for key, value := range cache.data {
 		if isExpired(value) {
 			delete(cache.data, key)
